@@ -225,7 +225,7 @@ namespace cairo {
 
         char unicode[6]{'\0'};
         utils::ucs4_to_utf8(unicode, chars.begin()->codepoint);
-        m_log.warn("Dropping unmatched character %s (U+%04x) in '%s'", unicode, chars.begin()->codepoint, t.contents);
+        // m_log.warn("Dropping unmatched character %s (U+%04x) in '%s'", unicode, chars.begin()->codepoint, t.contents);
         utf8.erase(chars.begin()->offset, chars.begin()->length);
         for (auto&& c : chars) {
           c.offset -= chars.begin()->length;
